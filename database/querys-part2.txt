@@ -1,0 +1,18 @@
+a.	The names of all salespeople that have an order with Samsonic.
+
+SELECT 
+	s.name salesperson
+FROM orders ors
+INNER JOIN salesperson s ON ors.salesperson_id = s.id
+WHERE ors.cust_id = 4
+
+b. The names of all salespeople that do not have any order with Samsonic.
+
+SELECT 
+	s.name salesperson,
+    c.name customer
+FROM orders ors
+INNER JOIN salesperson s ON ors.salesperson_id = s.id
+INNER join customer c ON ors.cust_id = c.id
+WHERE c.name != 'Samsonic'
+
